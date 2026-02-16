@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  build:
+    build: .
+    volumes:
+      - ./bin:/app/bin
+      - ./.buildozer:/app/.buildozer
+    environment:
+      - JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+    command: buildozer -v android debug
